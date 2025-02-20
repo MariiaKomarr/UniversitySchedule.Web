@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Перегляд навчального плану";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-controller="Curriculum" asp-action="Index">
+    <div>
+        <label>П.І.Б.:</label>
+        <input type="text" name="fullName" required />
+    </div>
+    <div>
+        <label>Факультет (ID):</label>
+        <input type="number" name="facultyId" required />
+    </div>
+    <div>
+        <label>Група (ID):</label>
+        <input type="number" name="groupId" required />
+    </div>
+    <button type="submit">Переглянути навчальний план</button>
+</form>

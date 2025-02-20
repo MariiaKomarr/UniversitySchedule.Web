@@ -1,0 +1,28 @@
+﻿@model IEnumerable<UniversitySchedule.Web.Models.Curriculum>
+@{
+    ViewData["Title"] = "Навчальний план";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>Для: @ViewBag.FullName, Факультет ID: @ViewBag.FacultyId, Група ID: @ViewBag.GroupId</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Курс</th>
+        <th>Семестр</th>
+        <th>Рік</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Course.Name</td>
+            <td>@item.Semester</td>
+            <td>@item.Year</td>
+        </tr>
+    }
+    </tbody>
+</table>
+

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Отримати довідку";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-controller="Help" asp-action="Index">
+    <div>
+        <label>Введіть запит для довідки:</label>
+        <input type="text" name="query" required />
+    </div>
+    <button type="submit">Отримати довідку</button>
+</form>

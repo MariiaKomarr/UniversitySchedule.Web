@@ -1,0 +1,33 @@
+﻿@model IEnumerable<UniversitySchedule.Web.Models.Lesson>
+
+@{
+    ViewData["Title"] = "Розклад занять";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Курс</th>
+        <th>Викладач</th>
+        <th>Аудиторія</th>
+        <th>Група</th>
+        <th>День</th>
+        <th>Час</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var lesson in Model)
+    {
+        <tr>
+            <td>@lesson.Course.Name</td>
+            <td>@lesson.Teacher.FullName</td>
+            <td>@lesson.Auditorium.Name</td>
+            <td>@lesson.Group.Name</td>
+            <td>@lesson.DayOfWeek</td>
+            <td>@lesson.StartTime.ToString(@"hh\:mm") - @lesson.EndTime.ToString(@"hh\:mm")</td>
+        </tr>
+    }
+    </tbody>
+</table>
